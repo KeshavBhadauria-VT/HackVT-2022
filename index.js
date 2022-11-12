@@ -5,6 +5,7 @@ const connectDB = require('./config/dbConnect');
 const { Client, Events, GatewayIntentBits, Collection } = require("discord.js");
 const { token } = require("./config.json");
 const mongoose = require("mongoose");
+const { Console } = require("node:console");
 
 //connect to mongoDB
 connectDB();
@@ -35,6 +36,8 @@ for (const file of commandFiles) {
     );
   }
 }
+
+
 client.on(Events.InteractionCreate, async (interaction) => {
   if (!interaction.isChatInputCommand()) return;
   const command = interaction.client.commands.get(interaction.commandName);
@@ -62,6 +65,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
     });
   }
 });
+
 // When the client is ready, run this code (only once)
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
 client.once(Events.ClientReady, async (c) => {

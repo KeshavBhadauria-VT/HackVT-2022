@@ -1,31 +1,29 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema(
+const companySchema = new mongoose.Schema(
   {
+    id: {
+      type: String,
+      required: true,
+    },
     name: {
       type: String,
       required: true,
     },
-    friends: [userSchema],
-    applies: {
+    type: {
       type: Number,
       required: true,
     },
-    rejects: {
-      type: Number,
-      required: true,
-    },
-
-    accepts: {
-      type: Number,
+    url: {
+      type: String,
       required: true,
     },
     createdAt: {
       type: Date,
       immutable: true,
     },
-    application: [String],
+    salaries: [String],
   },
   { _id: false }
 );
-module.exports = mongoose.model(Users,  userSchema);
+module.exports = mongoose.model(companies, companySchema);
