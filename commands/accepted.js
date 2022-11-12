@@ -1,19 +1,19 @@
-const { SlashCommandBuilder, Collection} = require("discord.js");
+const { SlashCommandBuilder, Collection, UserFlagsBitField} = require("discord.js");
 const fs = require('node:fs');
 const path = require("node:path");
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('accepted')
-        .setDescription('list the companies you were accepted by')
-        .addUserOption(option => 
-            option.setName('user')
-            .setDescription('the user you want information from')
-            .setRequired(true)),
+        .setDescription('list the companies you were accepted by'),
 	async execute(client, interaction, args = []) {
-        let guild_member = await interaction.guild.members.cache.get(`${interaction.options.getUser('user').id}`);
-        //TODO: access database here 
-        
-		await interaction.editReply(`${guild_member.user.username}\n \t accepted by: `);
+        let user_that_called_command = await User.findById(interaction.user.id);
+        let str = `${user_that_called_command.name}\n`;
+        for (let i = 0; i < user_that_called_command.applications.length; i++) {
+            if (user_that_called_command.applications[i].status === "accepted") {
+                str += `\tAccepted: ${user_that_called_command.applications[i].company.name}`;
+            }
+        }
+		await interaction.editReply(`${str}`);
 	},
 };
