@@ -23,20 +23,20 @@ module.exports = {
 		let rejects = await user.rejects;
 		let accepts = await user.accepts;
 
-		info += "Applied to " +applies + " companies.\n";
+		info += "Ghosted by " +applies + " companies.\n";
 		info += "Rejected from " + rejects + " companies.\n";
 		info += "Accepted by " + accepts + " companies. \n";
+		info += "Companies: \n"
 
 		for (const application of applications){
-			info += application.company + ":\t";
+			info += "\t" +application.company.name + ":\t";
 			info += application.status + "\n";
 		}
 		info += "Friends: \n";
 		for(const friend of following_me){
 			info += friend.name + "\n";
 		}
-
         
-		await interaction.editReply(`${guild_member.user.username} \t: \n ${info}`);
+		await interaction.editReply(`${guild_member.user.username}: \n\n ${info}`);
 	},
 };
