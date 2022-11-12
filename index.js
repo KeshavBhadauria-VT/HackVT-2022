@@ -1,9 +1,19 @@
 // Require the necessary discord.js classes
 const fs = require("node:fs");
 const path = require("node:path");
-
+const connectDB = require('./config/dbConnect');
 const { Client, Events, GatewayIntentBits, Collection } = require("discord.js");
 const { token } = require("./config.json");
+const mongoose = require("mongoose");
+
+//connect to mongoDB
+connectDB();
+
+
+mongoose.connection.once('open', () => {
+    console.log("DB connected baby :D");
+});
+
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
