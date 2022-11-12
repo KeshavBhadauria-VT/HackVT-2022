@@ -15,16 +15,28 @@ module.exports = {
 	async execute(client, interaction, args = []) {
 		let info = ``;
         let guild_member = await interaction.guild.members.cache.get(`${interaction.options.getUser('user').id}`);
-		const user = await User.findById(interaction.options.getUser('user').id).exec();
-		const applications = user.applications.exec();
-		console.log(applications);
-		// const friends = user.friends;
-		// const name = user.name;
-		
-		// for (const application of applications){
-		// }
+		let user = await User.findById(interaction.options.getUser('user').id);
+
+		let applications = await user.applications;
+		let following_me = await user.following_me;
+		let applies = await user.applies;
+		let rejects = await user.rejects;
+		let accepts = await user.accepts;
+
+		info += "Applied to " +applies + " companies.\n";
+		info += "Rejected from " + rejects + " companies.\n";
+		info += "Accepted by " + accepts + " companies. \n";
+
+		for (const application of applications){
+			info += application.company + ":\t";
+			info += application.status + "\n";
+		}
+		info += "Friends: \n";
+		for(const friend of following_me){
+			info += friend.name + "\n";
+		}
 
         
-		await interaction.editReply(`${guild_member.user.username}\n \tjoined: ${guild_member.joinedAt}\n \tapplied to X companies\n \tX acceptance\n \tX Ghosts\n \tX Rejections\n`);
+		await interaction.editReply(`${guild_member.user.username} \t: \n ${info}`);
 	},
 };
