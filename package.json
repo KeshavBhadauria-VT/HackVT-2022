@@ -1,0 +1,25 @@
+{
+  "name": "hackvt-2022",
+  "version": "1.0.0",
+  "description": "VTHack2022!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeshavBhadauria-VT/HackVT-2022.git"
+  },
+  "author": "Keshav Silver Saketh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KeshavBhadauria-VT/HackVT-2022/issues"
+  },
+  "homepage": "https://github.com/KeshavBhadauria-VT/HackVT-2022#readme",
+  "dependencies": {
+    "discord.js": "^14.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.27.0"
+  }
+}
