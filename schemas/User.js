@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
     friends: [this],
+    following_me: [this],
     applies: {
       type: Number,
       required: true,
