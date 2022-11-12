@@ -26,14 +26,12 @@ module.exports = {
     let company = null;
     let flag = await Company.exists({name: interaction.options.get("company").value});
     if (!flag) {
-      console.log("in here");
       company = await Company.create({
         _id: interaction.options.get("company").value,
         name: interaction.options.get("company").value,
         url: interaction.options.get("url").value,
       });
     } else {
-      console.log("in here p2");
 
       company = await Company.findById(
         interaction.options.get("company").value
@@ -49,7 +47,7 @@ module.exports = {
     user_that_called_command.applications.push(application);
     user_that_called_command.applies += 1;
     user_that_called_command.save();
-    await interaction.editReply(`${user_that_called_command}`);
+    await interaction.editReply(`${application} added`);
 
     //TODO: access database here
   },

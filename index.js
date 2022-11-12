@@ -60,7 +60,15 @@ client.on(Events.InteractionCreate, async (interaction) => {
     } else if (interaction.commandName === "remove_friend") {
       await interaction.deferReply();
       await command.execute(client, interaction, []);
-    } else {
+    } else if (interaction.commandName === "apply") {
+      await interaction.deferReply();
+      await command.execute(client, interaction, []);
+
+    } else if (interaction.commandName === "upload_resume") {
+      await interaction.deferReply();
+      await command.execute(client, interaction, []);
+    }
+    else {
       await command.execute(client, interaction, []);
     }
   } catch (error) {
