@@ -15,7 +15,7 @@ module.exports = {
 
     // add a friend to the interaction.user.tag
     let user = await User.findById(interaction.options.getUser('user').id);
-	let second_user = await User.findById(interaction.user.id);
+	  let second_user = await User.findById(interaction.user.id);
 
     await user.following_me.pull(second_user);
 
