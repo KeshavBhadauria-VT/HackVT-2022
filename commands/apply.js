@@ -2,16 +2,6 @@ const { SlashCommandBuilder, Collection} = require("discord.js");
 // const fs = require('node:fs');
 // const path = require("node:path");
 
-const mongoose = require("mongoose");
-
-//connect to mongoDB
-connectDB();
-
-
-// mongoose.connection.once('open', () => {
-//     console.log("DB connected baby :D");
-// });
-
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('apply')
