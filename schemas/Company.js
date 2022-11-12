@@ -8,21 +8,20 @@ const companySchema = new mongoose.Schema(
     },
     name: {
       type: String,
-      required: true,
+      unique: true
     },
     type: {
-      type: Number,
-      required: true,
+      type: String,
+      default: "tech",
     },
     url: {
       type: String,
       required: true,
     },
-    createdAt: {
-      type: Date,
-      immutable: true,
+    salaries: {
+      intern: "",
+      fullTime: ""
     },
-    salaries: [String],
   },
   { _id: false }
 );

@@ -54,6 +54,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
     } else if (interaction.commandName === "create_user") {
       await interaction.deferReply();
       await command.execute(client, interaction, []);
+    } else if (interaction.commandName === "add_friend") {
+      await interaction.deferReply();
+      await command.execute(client, interaction, []);
     } else {
       await command.execute(client, interaction, []);
     }

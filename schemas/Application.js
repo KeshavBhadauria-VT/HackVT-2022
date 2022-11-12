@@ -1,33 +1,28 @@
-import companySchema from "./Company";
-import userSchema from "./User";
+const Company = require("../schemas/Company").schema;
 
 const mongoose = require("mongoose");
 
 const applicationSchema = new mongoose.Schema(
   {
-    appId: {
+    status: {
       type: String,
       required: true,
-    },
-    status: {
-      type: Number,
-      required: true,
+      default: "Ghosted"
     },
     url: {
       type: String,
       immutable: true,
+      required: true
     },
     company: {
-        type: companySchema,
+        type: Company,
         immutable: true,
-    },
-    user: {
-        type: userSchema,
-        immutable: true,
+        required: true
     },
     createdAt: {
         type: Date,
         immutable: true,
+        default: () => Date.now(),
     },
   },
 );

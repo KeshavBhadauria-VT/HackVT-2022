@@ -1,4 +1,7 @@
 const mongoose = require("mongoose");
+const Application = require("../schemas/Application").schema;
+
+
 
 const userSchema = new mongoose.Schema(
   {
@@ -11,6 +14,7 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
     friends: [this],
+    following_me: [this],
     applies: {
       type: Number,
       required: true,
@@ -34,7 +38,7 @@ const userSchema = new mongoose.Schema(
       immutable: true,
       
     },
-    application: [String],
+    applications: [Application],
   },
   { _id: false }
 );
