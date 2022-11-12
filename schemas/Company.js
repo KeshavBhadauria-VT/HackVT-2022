@@ -8,7 +8,8 @@ const companySchema = new mongoose.Schema(
     },
     name: {
       type: String,
-      unique: true
+      unique: true,
+      lowercase: true
     },
     type: {
       type: String,

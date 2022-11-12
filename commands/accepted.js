@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, Collection, UserFlagsBitField} = require("discord.js");
 const fs = require('node:fs');
 const path = require("node:path");
-
+const User = require("../schemas/User");
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('accepted')
