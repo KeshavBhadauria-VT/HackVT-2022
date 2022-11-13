@@ -26,13 +26,13 @@ const {
           console.log(user_that_called_command.applications[i].company);
         if (user_that_called_command.applications[i].company.name === company) {
           user_that_called_command.applications[i].status = "rejected";
-          user_that_called_command.accepts += 1;
+          user_that_called_command.rejects += 1;
           user_that_called_command.save();
           break;
         }
       }
   
-      await interaction.editReply(`${user_that_called_command}`);
+      await interaction.editReply(`Damn sorry to hear about that ${company} doesn't deserve you ;)`);
     },
   };
   

@@ -6,7 +6,6 @@ const { Client, Events, GatewayIntentBits, Collection } = require("discord.js");
 const { token } = require("./config.json");
 const mongoose = require("mongoose");
 const { Console } = require("node:console");
-
 //connect to mongoDB
 connectDB();
 

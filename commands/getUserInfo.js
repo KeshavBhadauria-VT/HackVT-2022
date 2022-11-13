@@ -37,6 +37,6 @@ module.exports = {
 			info += friend.name + "\n";
 		}
         
-		await interaction.editReply(`${guild_member.user.username}: \n\n ${info}`);
+		await interaction.editReply(`${guild_member.user.username}: \n\n` + `\`\`\`${info}\`\`\``);
 	},
 };

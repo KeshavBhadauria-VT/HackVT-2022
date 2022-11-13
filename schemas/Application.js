@@ -17,7 +17,7 @@ const applicationSchema = new mongoose.Schema(
     company: {
         type: Company,
         immutable: true,
-        required: true
+        required: true,
     },
     createdAt: {
         type: Date,

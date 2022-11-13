@@ -47,7 +47,7 @@ module.exports = {
     user_that_called_command.applications.push(application);
     user_that_called_command.applies += 1;
     user_that_called_command.save();
-    await interaction.editReply(`${application} added`);
+    await interaction.editReply(`You have applied to ${application.company.name} lettssss goo\n\tYou have applied to ${user_that_called_command.applies} companies!`);
 
     //TODO: access database here
   },

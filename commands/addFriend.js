@@ -19,6 +19,6 @@ module.exports = {
 
     await user.following_me.push(second_user);
     await user.save();
-	await interaction.editReply(`${user.name} new profile looks like:${user}`);
+	await interaction.editReply(`Congratzzz you are now friends with <@${user._id}>!`);
   },
 };

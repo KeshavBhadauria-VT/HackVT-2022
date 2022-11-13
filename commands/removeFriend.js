@@ -20,6 +20,6 @@ module.exports = {
     await user.following_me.pull(second_user);
 
     await user.save();
-	await interaction.editReply(`${user.name} new profile looks like:${user}`);
+	await interaction.editReply(`Bridge is burned\n \tYou are no longer friends with ${user.name}`);
   },
 };

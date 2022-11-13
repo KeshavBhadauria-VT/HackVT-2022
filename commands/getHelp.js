@@ -19,6 +19,6 @@ module.exports = {
     commands += "\n"
         }
 
-        await interaction.reply(commands);
+        await interaction.reply(`\`\`\`${commands}\`\`\``);
     },
 };

@@ -19,6 +19,6 @@ module.exports = {
             file: interaction.options.get("resume").value,
           });
         
-		await interaction.editReply('file was sucsessfullt uploaded');
+		await interaction.editReply('Successfully added the resume, we dont know how to get it back lmao');
 	},
 };

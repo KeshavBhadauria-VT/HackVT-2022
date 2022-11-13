@@ -6,7 +6,7 @@ const Application = require("../schemas/Application").schema;
 const userSchema = new mongoose.Schema(
   {
     _id: {
-        type: Number,
+        type: String,
         required: true
     },
     name: {
@@ -38,7 +38,9 @@ const userSchema = new mongoose.Schema(
       immutable: true,
       
     },
-    applications: [Application],
+    applications: {
+        type: [Application],
+    }
   },
   { _id: false }
 );

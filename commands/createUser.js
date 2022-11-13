@@ -16,8 +16,7 @@ module.exports = {
             _id: interaction.options.getUser('user').id, 
             name: guild_member.user.username,
             createdAt: guild_member.joinedAt,
-            applications: []
-
+            applications: undefined
         });
 
         
