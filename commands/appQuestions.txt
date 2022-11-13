@@ -1,0 +1,22 @@
+## Inspiration
+As students looking to break into the field of Software engineering, we apply to hundreds of applications each recruitment season, a lot of which is repetitive. This process is extremely tedious and mind numbing. To combat this, we believe that having a platform to easily track and share your ups and downs of recruitment season is a great way to be more efficient, effective and have more fun. 
+
+## What it does
+The discord bot takes in several commands {apply, rejected, ghosted, accept, accepted, get_info, upload_resume} that allow users to track information about their applications to various jobs. 
+For example, a user can use the apply command to add a job they have recently applied for to their user account in the database. This would store the specific job, the company, and when the job was applied to, and other key information. Users can also upload their resumes to the database to hold with their application tracker. Then, users can use supplementary commands to update these stored applications based on responses and interviews they get. 
+There is also a social aspect to this tracker. A user can follow their friends to stay up to date with the updates they have on their applications. This is a great way to share wins during recruitment season, but also share the lows. There is also a leaderboard feature that shows who has the most acceptances in the server, but also there is a down bad leaderboard that shows who has gotten the most rejections. 
+
+## How we built it
+We built this product using javascript, utilizing discord.js, and mongoose.js to communicate with our MongoDB database. 
+
+## Challenges we ran into
+Our biggest challenges were learning to use the discord api and integrating the MongoDB database to save individualized user information. Both of these aspects we all have very limited to no experience in, so it took a while to understand the structure of query and search as well as how the bot could communicate with data and users. 
+
+## Accomplishments that we're proud of
+We are proud of how much we were able to accomplish and learn in one day. This was our first hackathon and we are proud that we were able to pick up and learn how to use a mongoDB database. 
+
+## What we learned
+We have learned a lot about how discord bots are created, how they communicate with users and databases, as well as how to effectively design noSQL database schemas. 
+
+## What's next for Application_Stack
+The next big problem we want to tackle with Application_Stack is automating the inputting of application information. Currently, it is extremely tedious to input the same contact, skill, and experience information. The discord bot would be used as an interface for the user to create application profiles and a chrome extension would connect to the database and fill and submit applications and communicate back to the discord bot to store and track the application. 
