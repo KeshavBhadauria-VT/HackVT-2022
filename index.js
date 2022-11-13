@@ -75,6 +75,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
     } else if (interaction.commandName === "reject") {
         await interaction.deferReply();
       await command.execute(client, interaction, []);
+    } else if (interaction.commandName === "leaderboard") {
+        await interaction.deferReply();
+        await command.execute(client, interaction, []);     
     }
     else {
       await command.execute(client, interaction, []);

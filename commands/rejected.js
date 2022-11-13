@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, Collection } = require("discord.js");
 const fs = require("node:fs");
 const path = require("node:path");
+const User = require("../schemas/User");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -18,9 +19,9 @@ module.exports = {
     let str = `${user_that_called_command.name}\n`;
     for (let i = 0; i < user_that_called_command.applications.length; i++) {
       if (user_that_called_command.applications[i].status === "rejected") {
-        str += `\tRejected: ${user_that_called_command.applications[i].company.name}`;
+        str += `\tRejected: ${user_that_called_command.applications[i].company.name}\n`;
       }
     }
-    await interaction.editReply(`${str}`);
+    await interaction.reply(`${str}`);
   },
 };
